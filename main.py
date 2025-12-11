@@ -11,6 +11,7 @@ facts_list = ["La mayoría de las personas que sufren adicción tecnológica exp
 "Elon Musk también aboga por la regulación de las redes sociales y la protección de los datos personales de los usuarios. Afirma que las redes sociales recopilan una enorme cantidad de información sobre nosotros, que luego puede utilizarse para manipular nuestros pensamientos y comportamientos"
 "Las redes sociales tienen aspectos positivos y negativos, y debemos ser conscientes de ambos cuando utilicemos estas plataformas"]
 
+passwords_list = ["Contraseña123!", "MiPerroEsGenial2024$", "VacacionesEnLaPlaya#1", "CaféConLeche2024@", "AventurasEnMontaña!2024", "TecnologíaYVida2024%", "ExplorandoElMundo$2024", "SeguridadPrimero!2024"]
 
 @app.route("/")
 def hello_world():
@@ -24,6 +25,10 @@ def hello_world():
 def dependencia():
     return f'<h1>{random.choice(facts_list)}</h1>'
 
+@app.route("/contraseña")
+def contraseña():
+    return f'<h1>{random.choice(passwords_list)}</h1>'
+
 @app.route("/2")
 def Página2():
     return '<h1>Hello, desde la página 2 👋!</h1>'
@@ -31,5 +36,6 @@ def Página2():
 @app.route("/nombre")
 def saludar(nombre):
     return f'<h1>Hola, {nombre}!</h1>'
+
 
 app.run(debug=True)
